@@ -1,3 +1,9 @@
+
+算法逻辑没问题，但是数据结构有大问题。
+1、存图用的是邻接矩阵，一个10000*10000的int型二维矩阵所占内存=（10000*10000）*4/1024/1021 = 381MB;所以肯定会超空间
+2、算法复杂度 = O(n^2);
+3、某个节点的邻节点不能从矩阵里面体现出来，所以每次访问某点的邻接点都要从第一个点开始遍历
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -39,7 +45,6 @@ public class Main{
 		int sum = 0;
 		for(int i =1;i<=n-1;i++){
 			isMin[k] = true;
-			
 			for(int j = 2;j<=n;j++){
 				if(isMin[j]==false){
 					if(dij[j]>=dij[k]+g[k][j]){
