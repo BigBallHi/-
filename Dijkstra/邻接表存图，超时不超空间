@@ -60,8 +60,12 @@ class Graph{
 				break;
 			}		
 		}
-		n11.neighbors.add(new Edge(n22,w));
-		n22.neighbors.add(new Edge(n11,w));
+		e = new Edge(n22,w);
+		n11.neighbors.add(e);
+		e= new Edge(n11,w);
+		n22.neighbors.add(e);
+		//n11.neighbors.add(new Edge(n22,w));
+		//n11.neighbors.add(new Edge(n11,w));
 	}
 	/*****************************************核心算法*********************************************************/
 	public void dijkstra(){
@@ -122,3 +126,4 @@ public class Main{
 		g.dijkstra();
 	}
 }
+第63行，注释掉的两行运行效率不如第一种。。。不知道为什么
