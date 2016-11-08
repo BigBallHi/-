@@ -63,10 +63,9 @@ public class Main{
 					q.add(e.b);
 				}
 			}
-			Node node = q.poll();
-			node.isMinDij = true;
-			sum += node.pre_e.w;
-			now = node;
+			now = q.poll();
+			now.isMinDij = true;
+			sum += now.pre_e.w;
 		}
 		return sum;
 	}
